@@ -2,3 +2,16 @@ server:
   port: 80
   servlet:
     context-path: /
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///world
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update  # create每次运行都删除原有表创建新表,update不用每次创建新表
+    show-sql: true # 打印SQL语句
+
+

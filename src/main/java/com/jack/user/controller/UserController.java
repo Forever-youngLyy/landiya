@@ -1,5 +1,6 @@
-package com.jack;
+package com.jack.user.controller;
 
+import com.jack.utils.MD5Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,9 +19,10 @@ public class UserController {
     @ResponseBody
     public Object getUser(){
         System.out.println("UserController.getUser");
+        String password = "lyy123";
         Map<String,String> map = new HashMap<>();
         map.put("username","lyy");
-        map.put("password","lyy123");
+        map.put("password", MD5Utils.getMD5(password));
         return map;
     }
 }
