@@ -65,9 +65,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.48</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>landiya</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

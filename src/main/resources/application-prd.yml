@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.16.215.1:3306/mysql
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update  # create每次运行都删除原有表创建新表,update不用每次创建新表
+    show-sql: true # 打印SQL语句
+
+  #redis配置
+  redis:
+    #Redis数据库索引（缓存将使用此索引编号的数据库）
+    database: 2
+    #Redis服务器地址
+    host:  121.40.18.100
+    #Redis服务器连接端口
+    port:  6379
+    #Redis服务器连接密码（默认为空）
+    password: linyuanyou
+    #连接超时时间（毫秒）
+    timeout:  0
+    #redis的前缀
+    #keyPrefix: qhxh_dev
+    jedis:
+      pool:
+        #连接池最大连接数（使用负值表示没有限制）
+        max-active:  8
+        #连接池中的最大空闲连接
+        max-idle:  8
+        #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait:  -1
+        #连接池中的最小空闲连接
+        min-idle:  0

@@ -1,17 +1,14 @@
 server:
-  port: 8081
+  port: 9001
   servlet:
     context-path: /
 
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///mysql
-    username: root
-    password: root
-  jpa:
-    hibernate:
-      ddl-auto: update  # create每次运行都删除原有表创建新表,update不用每次创建新表
-    show-sql: true # 打印SQL语句
+  profiles:
+    active: dev
+  #    active: prd
+  messages:
+    encoding: UTF-8
+
 
 
