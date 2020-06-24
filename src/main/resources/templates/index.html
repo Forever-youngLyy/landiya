@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link th:href="@{/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <button id="showValue" class="layui-btn layui-btn-warm">点我</button>
+    <span id="thVal" style="visibility: hidden" th:text="${s}"></span>
+</body>
+<script th:src="@{layui/layui.all.js}"></script>
+<script th:src="@{js/jquery-3.5.1.min.js}"></script>
+<script type="text/javascript">
+    var isShow = false;
+    var layer = layui.layer;
+    $(function () {
+        $("#showValue").click(function () {
+            isShow = !isShow;
+            if(isShow){
+                $("#thVal").css("visibility","visible");
+            }else {
+                $("#thVal").css("visibility","hidden");
+            }
+            layer.msg("Changed");
+        })
+    });
+</script>
+</html>

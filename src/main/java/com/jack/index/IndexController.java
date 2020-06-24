@@ -1,8 +1,9 @@
 package com.jack.index;
 
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,8 +16,8 @@ import java.util.Objects;
 @Controller
 public class IndexController {
 
-    private Map<Object,Object> map = new HashMap<>();
-    private Map<Object,Integer> sessionMap = new HashMap<>();
+    private static Map<Object,Object> map = new HashMap<>();
+    private static Map<Object,Integer> sessionMap = new HashMap<>();
 
     @RequestMapping({"/",""})
     @ResponseBody
@@ -31,6 +32,13 @@ public class IndexController {
 
         sessionMap.put(id,cnt);
         return map;
+    }
+
+    @GetMapping("/testth")
+    public String testth(Model model){
+        String s = "LYY";
+        model.addAttribute("s",s);
+        return "index";
     }
 
 }

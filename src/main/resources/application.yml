@@ -4,11 +4,21 @@ server:
     context-path: /
 
 spring:
+#  resources:
+#    static-locations: classpath:/static/
+#  mvc:
+#    static-path-pattern: /static/**
   profiles:
     active: dev
   #    active: prd
   messages:
     encoding: UTF-8
-
-
-
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    cache: false
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    servlet:
+      content-type: text/html
