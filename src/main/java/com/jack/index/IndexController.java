@@ -19,7 +19,7 @@ public class IndexController {
     private static Map<Object,Object> map = new HashMap<>();
     private static Map<Object,Integer> sessionMap = new HashMap<>();
 
-    @RequestMapping({"/",""})
+    @RequestMapping({"/"})
     @ResponseBody
     public Object index(HttpServletRequest request){
         HttpSession session = request.getSession();
